@@ -21,6 +21,7 @@ defmodule ConsensusWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/messages", ChatLiveView
   end
 
   # Other scopes may use custom stacks.
