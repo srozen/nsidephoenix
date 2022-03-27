@@ -47,8 +47,8 @@ defmodule Consensus.Message do
       {:ok, %Message{}} ->
         Phoenix.PubSub.broadcast Consensus.PubSub, "messages", :new_message
         {:ok, %Message{}}
-      {:error, %Ecto.Changeset{}} ->
-        {:error, %Ecto.Changeset{}}
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:error, changeset}
     end
   end
 end

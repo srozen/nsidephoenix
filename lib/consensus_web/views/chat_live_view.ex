@@ -28,9 +28,14 @@ defmodule ConsensusWeb.ChatLiveView do
   def handle_event("save", %{"message" => message_params}, socket) do
     case Message.create_message(Map.put(message_params, "user_id", socket.assigns.user_id)) do
       {:ok, _message} ->
-        {:noreply, socket}
+        {:noreply, put_flash(socket, :info, "Message sent")}
       {:error, %Ecto.Changeset{} = changeset} ->
-        {:noreply, assign(socket, changeset: changeset)}
+        {
+          :noreply,
+          socket
+          |> put_flash(:error, "Invalid message")
+          |> assign(changeset: changeset)
+        }
     end
   end
 
