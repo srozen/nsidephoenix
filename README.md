@@ -1,5 +1,23 @@
 # Consensus
 
+## About
+
+Simple PoC project with the following business features:
+
+  - [ ] Live global chat
+  - [ ] Presence channel
+  - [ ] Consensus Algorithm triggering
+
+These features are backed by and intend to show to following core features of Phoenix:
+
+  - PubSub
+  - LiveView and LiveComponent
+  - OTP GenServer
+  - Presence Channels
+  - Ecto
+
+## Run the project
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
