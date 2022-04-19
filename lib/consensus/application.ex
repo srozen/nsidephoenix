@@ -15,7 +15,9 @@ defmodule Consensus.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Consensus.PubSub},
       # Start the Endpoint (http/https)
-      ConsensusWeb.Endpoint
+      ConsensusWeb.Endpoint,
+      # Start Presence tracker
+      ConsensusWeb.Presence
       # Start a worker by calling: Consensus.Worker.start_link(arg)
       # {Consensus.Worker, arg}
     ]
