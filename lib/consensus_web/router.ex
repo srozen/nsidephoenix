@@ -11,6 +11,7 @@ defmodule ConsensusWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fetch_current_user
+    plug :assign_user_socket_token
   end
 
   pipeline :api do

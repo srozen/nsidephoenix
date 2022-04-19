@@ -108,6 +108,15 @@ defmodule ConsensusWeb.UserAuth do
     end
   end
 
+  def assign_user_socket_token(conn, _opts) do
+    if current_user = conn.assigns[:current_user] do
+      token = Phoenix.Token.sign(conn, "user socket", current_user.id)
+      assign(conn, :user_socket_token, token)
+    else
+      conn
+    end
+  end
+
   @doc """
   Used for routes that require the user to not be authenticated.
   """
