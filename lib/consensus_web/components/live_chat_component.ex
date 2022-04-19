@@ -5,6 +5,11 @@ defmodule ConsensusWeb.LiveChatComponent do
   def render(assigns) do
     ~H"""
     <div>
+      <h1> Messages </h1>
+      <%= for message <- @messages do %>
+        <p><%= message.body %></p>
+      <% end %>
+
       <.form let={f} for={@changeset} phx-submit="save" phx-target={@myself}>
         <%= label f, :body %>
         <%= text_input f, :body %>
@@ -12,10 +17,6 @@ defmodule ConsensusWeb.LiveChatComponent do
 
         <%= submit "Send" %>
       </.form>
-      <h1> Messages </h1>
-      <%= for message <- @messages do %>
-        <p><%= message.body %></p>
-      <% end %>
     </div>
     """
   end

@@ -17,9 +17,10 @@ defmodule Consensus.Application do
       # Start the Endpoint (http/https)
       ConsensusWeb.Endpoint,
       # Start Presence tracker
-      ConsensusWeb.Presence
+      ConsensusWeb.Presence,
       # Start a worker by calling: Consensus.Worker.start_link(arg)
       # {Consensus.Worker, arg}
+      {LiveStack, [1, "fizz", 3, "foo"]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
